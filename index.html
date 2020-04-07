@@ -36,16 +36,20 @@
                 // Calculating the interest for each individual object using the formula: (principal * rate * time) / 100. 
                 element.interest = (element.principal * element.rate * element.time) / 100;
             });
-                return arr;
+                
         }
 
         // calling the function and passing 'data' array created.
-        interestCalculator(data);
+        
         interestData = data.map(element => {
             return element;
         });
 
         console.log(interestData);
+        return interestData;
+}
+//Calling the function 
+interestCalculator(data)
     
     
     </script>
