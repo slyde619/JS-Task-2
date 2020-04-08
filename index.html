@@ -23,33 +23,29 @@
 
         // creation of function called "interestCalculator" that takes an array as a single argument and does the following:
         function interestCalculator(arr){
-            arr.forEach(element => {
-                if (element.principal >= 2500 && element.principal > 1 && element.time < 3){
-                    element.rate = 3;
-                }else if(element.principal >= 2500 && element.time >= 3){
-                    element.rate = 4;
-                }else if(element.principal < 2500 || element.time >= 1){
-                    element.rate = 2;
-                }else{
-                    element.rate = 1;
-                }
-                // Calculating the interest for each individual object using the formula: (principal * rate * time) / 100. 
-                element.interest = (element.principal * element.rate * element.time) / 100;
-            });
+           if (element.principal >= 2500 && element.time > 1 && element.time < 3) {
+			element.rate = 3;
+		} else if (element.principal >= 2500 && element.time >= 3) {
+			element.rate = 4;
+		} else if (element.principal < 2500 || element.time <= 1) {
+			element.rate = 2;
+		} else {
+			element.rate = 1;
+		}
+           // Calculating the interest for each individual object using the formula: (principal * rate * time) / 100. 
+           element.interest = (element.principal * element.rate * element.time) / 100;
+        });
                 
         }
-
-        // calling the function and passing 'data' array created.
-        
+        // array.map to create and store result in a new array called interestData
         interestData = data.map(element => {
             return element;
         });
-
         console.log(interestData);
         return interestData;
-}
-//Calling the function 
-interestCalculator(data)
+        }
+        //Calling the function 
+        interestCalculator(data)
     
     
     </script>
